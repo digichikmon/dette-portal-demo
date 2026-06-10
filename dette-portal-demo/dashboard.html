@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Dette Services</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard.html">
+
+<div class="app">
+  <aside class="sidebar" id="sidebar-mount"></aside>
+
+  <main class="main">
+
+    <div class="topbar">
+      <div class="topbar__title">
+        <span class="eyebrow">Welcome back</span>
+        <h1>Your Calendar</h1>
+      </div>
+      <div class="topbar__meta">
+        <span class="sync-badge">Synced to Google Calendar</span><br>
+        <strong>ms.dette@dettesvcs.com</strong>
+      </div>
+    </div>
+
+    <div class="grid-2">
+
+      <!-- Calendar -->
+      <div class="panel">
+        <div class="panel__head">
+          <h2>June 2026</h2>
+          <span class="tag">All categories</span>
+        </div>
+
+        <div class="cal-grid">
+          <div class="dow">Su</div><div class="dow">Mo</div><div class="dow">Tu</div>
+          <div class="dow">We</div><div class="dow">Th</div><div class="dow">Fr</div><div class="dow">Sa</div>
+
+          <div class="day empty"></div><div class="day empty"></div>
+          <div class="day">1</div><div class="day">2</div><div class="day">3</div>
+          <div class="day">4</div><div class="day">5</div>
+
+          <div class="day">6</div><div class="day">7</div><div class="day">8</div>
+          <div class="day">9</div>
+          <div class="day today">10<span class="dot" style="background:#A8694F"></span></div>
+          <div class="day">11</div><div class="day">12</div>
+
+          <div class="day">13</div><div class="day">14</div>
+          <div class="day">15<span class="dot" style="background:#5E7A4A"></span></div>
+          <div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day">19</div>
+
+          <div class="day">20</div><div class="day">21</div><div class="day">22</div>
+          <div class="day">23</div>
+          <div class="day">24<span class="dot" style="background:#A8694F"></span></div>
+          <div class="day">25</div><div class="day">26</div>
+
+          <div class="day">27</div><div class="day">28</div>
+          <div class="day">29<span class="dot" style="background:var(--accent)"></span></div>
+          <div class="day">30</div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
+        </div>
+
+        <hr class="hr">
+        <div class="flex-between">
+          <span class="small muted">
+            <span class="chip chip--wedding">Wedding</span>
+            &nbsp;<span class="chip chip--realestate">Real Estate</span>
+            &nbsp;<span class="chip chip--special">Special Event</span>
+          </span>
+          <a href="add-event.html" class="btn btn--accent">+ Add to calendar</a>
+        </div>
+      </div>
+
+      <!-- Upcoming -->
+      <div class="panel">
+        <div class="panel__head">
+          <h2>Upcoming</h2>
+          <span class="tag">Next 30 days</span>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date">10<span>JUN</span></div>
+          <div class="event-row__body">
+            <h3>Venue walkthrough — Rivière Hall</h3>
+            <p><span class="chip chip--wedding">Wedding</span> &nbsp;Couple: A. &amp; M. Tremblay</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date">15<span>JUN</span></div>
+          <div class="event-row__body">
+            <h3>Open house — 142 Rue Principale</h3>
+            <p><span class="chip chip--realestate">Real Estate</span> &nbsp;Residential listing</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date">24<span>JUN</span></div>
+          <div class="event-row__body">
+            <h3>Final dress fitting</h3>
+            <p><span class="chip chip--wedding">Wedding</span> &nbsp;Couple: A. &amp; M. Tremblay</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date">29<span>JUN</span></div>
+          <div class="event-row__body">
+            <h3>Summer fundraiser — vendor setup</h3>
+            <p><span class="chip chip--special">Special Event</span> &nbsp;Ponderosa Solutions</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick links -->
+    <div class="grid-3" style="margin-top:24px;">
+
+      <div class="panel" style="margin-top:0;">
+        <div class="panel__head">
+          <h2 style="font-size:16px;">Address Book</h2>
+          <span class="tag">ICE</span>
+        </div>
+        <p class="muted small">Emergency contacts and key vendors, all in one place.</p>
+        <a href="emergency.html" class="btn btn--ghost" style="width:100%; margin-top:8px;">Open address book</a>
+      </div>
+
+      <div class="panel" style="margin-top:0;">
+        <div class="panel__head">
+          <h2 style="font-size:16px;">2027 Calendars</h2>
+          <span class="tag">Orders</span>
+        </div>
+        <p class="muted small">Order printed wedding, real estate, or special-event calendars for 2027.</p>
+        <a href="shop.html" class="btn btn--ghost" style="width:100%; margin-top:8px;">View calendars</a>
+      </div>
+
+      <div class="panel" style="margin-top:0;">
+        <div class="panel__head">
+          <h2 style="font-size:16px;">Merch</h2>
+          <span class="tag">Shop</span>
+        </div>
+        <p class="muted small">Personalised wedding tees and keepsakes, made to order.</p>
+        <a href="shop.html" class="btn btn--ghost" style="width:100%; margin-top:8px;">Visit shop</a>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add to Calendar — Dette Services</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="add-event.html">
+
+<div class="app">
+  <aside class="sidebar" id="sidebar-mount"></aside>
+
+  <main class="main">
+
+    <div class="topbar">
+      <div class="topbar__title">
+        <span class="eyebrow">Step 02</span>
+        <h1>Add to Calendar</h1>
+      </div>
+      <div class="topbar__meta">
+        <span class="sync-badge">Synced to Google Calendar</span><br>
+        <strong>ms.dette@dettesvcs.com</strong>
+      </div>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="panel">
+        <div class="panel__head">
+          <h2>New entry</h2>
+          <span class="tag">Routes automatically</span>
+        </div>
+
+        <form onsubmit="return false;">
+          <label for="ev-category">Category</label>
+          <select id="ev-category">
+            <option>Wedding</option>
+            <option>Real Estate</option>
+            <option>Special Event</option>
+          </select>
+
+          <label for="ev-title">Title</label>
+          <input type="text" id="ev-title" placeholder="e.g. Cake tasting — Patisserie Lemoine" value="Cake tasting — Patisserie Lemoine">
+
+          <div class="field-row">
+            <div>
+              <label for="ev-date">Date</label>
+              <input type="date" id="ev-date" value="2026-07-08">
+            </div>
+            <div>
+              <label for="ev-time">Time</label>
+              <input type="time" id="ev-time" value="14:00">
+            </div>
+          </div>
+
+          <label for="ev-notes">Notes</label>
+          <textarea id="ev-notes" rows="3" placeholder="Anything the team should know">Bring fabric swatch for the groom's tie colour match.</textarea>
+
+          <button type="button" class="btn btn--accent" style="width:100%;" onclick="submitEvent()">
+            Add to calendar
+          </button>
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head">
+          <h2>What happens next</h2>
+          <span class="tag">Behind the scenes</span>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date" style="font-size:15px; font-family:var(--font-mono); color:var(--ink);">1</div>
+          <div class="event-row__body">
+            <h3>Entry is categorised</h3>
+            <p>The portal tags it Wedding, Real Estate, or Special Event — these never mix on your calendars or printed materials.</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date" style="font-size:15px; font-family:var(--font-mono); color:var(--ink);">2</div>
+          <div class="event-row__body">
+            <h3>Synced to your Gmail calendar</h3>
+            <p>The event appears on your own Google Calendar automatically — no separate login.</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date" style="font-size:15px; font-family:var(--font-mono); color:var(--ink);">3</div>
+          <div class="event-row__body">
+            <h3>Summary sent to the right inbox</h3>
+            <p>A short summary routes to you or Danielle depending on category, so nothing needs to be re-typed.</p>
+          </div>
+        </div>
+
+        <hr class="hr">
+        <p class="small muted">
+          In this prototype, "Add to calendar" shows a confirmation only — no real
+          Google account is connected. The live build wires this step to the
+          Google Calendar API.
+        </p>
+      </div>
+
+    </div>
+
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  function submitEvent() {
+    const category = document.getElementById('ev-category').value;
+    const title = document.getElementById('ev-title').value || "Untitled entry";
+    showToast(`"${title}" added — synced to Google Calendar (${category})`);
+  }
+</script>
+</body>
+</html>
