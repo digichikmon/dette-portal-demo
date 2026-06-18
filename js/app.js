@@ -24,8 +24,8 @@ function renderSidebar(activeHref) {
 
   mount.innerHTML = `
     <div class="sidebar__brand">
-      <span class="eyebrow">Dette Services</span>
-      <div class="wordmark">Dette</div>
+      <span class="eyebrow">D'Ette Services</span>
+      <div class="wordmark">D'Ette</div>
     </div>
     <nav class="sidebar__nav">
       ${links}
