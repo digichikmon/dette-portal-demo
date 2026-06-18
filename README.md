@@ -1,4 +1,4 @@
-# Dette Services — Portal Demo (Phase 0 Prototype)
+# D'Ette Services — Portal Demo (Phase 0 Prototype)
 
 A clickable, static prototype of the client portal described in the discovery
 call (10 June 2026). Built to be **shown**, not to function — no real
