@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Contacts — D'Ette Services</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="wedding/emergency.html" class="wedding-theme">
+
+<div class="app">
+  <aside class="sidebar" id="sidebar-mount"></aside>
+
+  <main class="main">
+
+    <div class="topbar">
+      <div class="topbar__title">
+        <span class="eyebrow">Wedding Portal · Step 03</span>
+        <h1>Wedding Contacts</h1>
+      </div>
+      <div class="topbar__meta">
+        <span class="sync-badge">Synced to Google Calendar</span><br>
+        <strong>ms.dette@dettesvcs.com</strong>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel__head">
+        <h2>Emergency contacts</h2>
+        <span class="tag">Pre-printed on wedding calendar</span>
+      </div>
+      <p class="muted small">
+        These numbers appear on the printed 2027 Wedding Calendar's emergency page
+        and are always accessible here in the portal.
+      </p>
+      <div class="grid-3">
+        <div class="contact-card">
+          <span class="role">Emergency</span>
+          <h3>911</h3>
+          <p>Police · Fire · Ambulance</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Directory assistance</span>
+          <h3>411</h3>
+          <p>Local listings</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Poison control</span>
+          <h3>1-800-222-1222</h3>
+          <p>24-hour hotline</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel__head">
+        <h2>Wedding vendor directory</h2>
+        <span class="tag">Your team</span>
+      </div>
+      <p class="muted small">
+        Every vendor on your wedding team, in one place. Wedding activities only —
+        real estate and special event contacts are on their own separate portals.
+      </p>
+      <div class="grid-3">
+        <div class="contact-card">
+          <span class="role">Wedding planner</span>
+          <h3>D'Ette Services</h3>
+          <p>ms.dette@dettesvcs.com</p>
+          <p>(346) 291-7543</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Photographer</span>
+          <h3>Studio Lumière</h3>
+          <p>contact@studiolumiere.example</p>
+          <p>(555) 210-0044</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Florist</span>
+          <h3>Bloom & Co.</h3>
+          <p>hello@bloomco.example</p>
+          <p>(555) 310-0077</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Caterer</span>
+          <h3>Patisserie Lemoine</h3>
+          <p>info@lemoine.example</p>
+          <p>(555) 410-0099</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Venue</span>
+          <h3>Rivière Hall</h3>
+          <p>events@rivierehall.example</p>
+          <p>(555) 510-0022</p>
+        </div>
+        <div class="contact-card editable">
+          <span class="role">Add vendor</span>
+          <h3>+ New contact</h3>
+          <p>Name, role, phone, email</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel__head">
+        <h2>Couple's personal contacts</h2>
+        <span class="tag">ICE — in case of emergency</span>
+      </div>
+      <p class="muted small">
+        Added by the couple — people to contact on their behalf if needed.
+      </p>
+      <div class="grid-3">
+        <div class="contact-card">
+          <span class="role">Bride's family contact</span>
+          <h3>Marie Tremblay</h3>
+          <p>Mother of bride</p>
+          <p>(450) 555-0188</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Groom's family contact</span>
+          <h3>James Tremblay</h3>
+          <p>Father of groom</p>
+          <p>(450) 555-0166</p>
+        </div>
+        <div class="contact-card editable">
+          <span class="role">Add contact</span>
+          <h3>+ New ICE contact</h3>
+          <p>Name, relation, phone</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+const WEDDING_NAV_ITEMS = [
+  { num: "01", label: "Dashboard",       href: "dashboard.html" },
+  { num: "02", label: "Add to calendar", href: "add-event.html" },
+  { num: "03", label: "Wedding contacts",href: "emergency.html" },
+  { num: "04", label: "Shop",            href: "shop.html" },
+];
+function renderWeddingSidebar(activeHref) {
+  const mount = document.getElementById("sidebar-mount");
+  if (!mount) return;
+  const links = WEDDING_NAV_ITEMS.map(item => {
+    const active = item.href === activeHref ? " active" : "";
+    return `<a href="${item.href}" class="${active.trim()}">
+              <span class="num">${item.num}</span><span>${item.label}</span>
+            </a>`;
+  }).join("");
+  mount.innerHTML = `
+    <div class="sidebar__brand">
+      <span class="eyebrow">D'Ette Services</span>
+      <div class="wordmark">Wedding Portal</div>
+    </div>
+    <nav class="sidebar__nav">${links}
+      <a href="../index.html" style="margin-top:auto;opacity:0.5;">
+        <span class="num">↩</span><span>Sign out</span>
+      </a>
+    </nav>
+    <div class="sidebar__foot">Demo build · Prototype</div>`;
+}
+document.addEventListener("DOMContentLoaded", () => renderWeddingSidebar("emergency.html"));
+</script>
+
+</body>
+</html>
