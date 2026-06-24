@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop — D'Ette Services</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Shop — Wedding Portal</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .sidebar { background: #2A1A18; }
+  .sidebar__brand .wordmark { font-size: 22px; }
+  .sidebar__brand .eyebrow { color: #C49A8A; }
+  .sidebar__nav a .num { color: #C49A8A; }
+  .sidebar__nav a.active { background: rgba(168,105,79,0.25); }
+</style>
 </head>
-<body data-page="shop.html">
+<body data-page="wedding/shop.html">
 
 <div class="app">
   <aside class="sidebar" id="sidebar-mount"></aside>
@@ -15,7 +22,7 @@
 
     <div class="topbar">
       <div class="topbar__title">
-        <span class="eyebrow">Step 04</span>
+        <span class="eyebrow">Wedding Portal · Step 04</span>
         <h1>Shop</h1>
       </div>
       <div class="topbar__meta">
@@ -26,46 +33,47 @@
 
     <div class="panel">
       <div class="panel__head">
-        <h2>2027 Calendars</h2>
-        <span class="tag">Pre-order · ships October</span>
+        <h2>2027 Wedding Calendar</h2>
+        <span class="tag">Pre-order · Ships October 2026</span>
       </div>
       <p class="muted small">
-        Wall and desk formats, one flat price across every collection.
+        Wall and desk formats. One flat price. Emergency / ICE page included.
+        Wedding content only — never mixed with real estate or special events.
       </p>
-
       <div class="grid-3">
         <div class="product-card">
-          <div class="product-card__media">Wedding · 2027</div>
+          <div class="product-card__media">Wall · Wedding 2027</div>
           <div class="product-card__body">
-            <h3>Wedding Calendar</h3>
-            <p>Wall or desk · agenda pages · QR code</p>
+            <h3>Wedding Wall Calendar</h3>
+            <p>12 months · writing lines · QR code · ICE page</p>
             <div class="flex-between">
               <span class="product-card__price">$—.00</span>
-              <button class="btn btn--ghost" onclick="showToast('Added to cart — Wedding Calendar 2027')">Add</button>
+              <button class="btn btn--ghost"
+                onclick="showToast('Added — 2027 Wedding Wall Calendar')">Add</button>
             </div>
           </div>
         </div>
-
         <div class="product-card">
-          <div class="product-card__media">Real Estate · 2027</div>
+          <div class="product-card__media">Desk · Wedding 2027</div>
           <div class="product-card__body">
-            <h3>Real Estate Calendar</h3>
-            <p>Residential · commercial · property mgmt</p>
+            <h3>Wedding Desk Calendar</h3>
+            <p>12 months · writing lines · QR code · ICE page</p>
             <div class="flex-between">
               <span class="product-card__price">$—.00</span>
-              <button class="btn btn--ghost" onclick="showToast('Added to cart — Real Estate Calendar 2027')">Add</button>
+              <button class="btn btn--ghost"
+                onclick="showToast('Added — 2027 Wedding Desk Calendar')">Add</button>
             </div>
           </div>
         </div>
-
         <div class="product-card">
-          <div class="product-card__media">Special Event · 2027</div>
+          <div class="product-card__media">White-label · 2027</div>
           <div class="product-card__body">
-            <h3>Special Event Calendar</h3>
-            <p>Wall or desk · watermark option</p>
+            <h3>White-label Calendar</h3>
+            <p>Same design · your name + logo swapped in · ~2 week turnaround</p>
             <div class="flex-between">
               <span class="product-card__price">$—.00</span>
-              <button class="btn btn--ghost" onclick="showToast('Added to cart — Special Event Calendar 2027')">Add</button>
+              <button class="btn btn--ghost"
+                onclick="showToast('Request sent — White-label Calendar')">Request</button>
             </div>
           </div>
         </div>
@@ -78,58 +86,88 @@
         <span class="tag">Made to order</span>
       </div>
       <p class="muted small">
-        Front-and-back personalised tees — names, wedding date, and your photo,
-        background removed.
+        Personalised front-and-back tees — names, wedding date, couple photo
+        with background removed, and a custom saying. Multiple shirt colours available.
       </p>
-
       <div class="grid-3">
         <div class="product-card">
           <div class="product-card__media">"I'm His" Tee</div>
           <div class="product-card__body">
             <h3>"I'm His" — Groom Tee</h3>
-            <p>Front: groom photo · Back: couple photo + date</p>
+            <p>Front: groom photo · Back: couple photo + date + saying</p>
             <div class="flex-between">
               <span class="product-card__price">$—.00</span>
-              <button class="btn btn--ghost" onclick="showToast('Added to cart — \\'I\\'m His\\' Tee')">Add</button>
+              <button class="btn btn--ghost"
+                onclick="showToast('Added — \\'I\\'m His\\' Tee')">Add</button>
             </div>
           </div>
         </div>
-
         <div class="product-card">
           <div class="product-card__media">"I'm Hers" Tee</div>
           <div class="product-card__body">
             <h3>"I'm Hers" — Bride Tee</h3>
-            <p>Front: bride photo · Back: couple photo + date</p>
+            <p>Front: bride photo · Back: couple photo + date + saying</p>
             <div class="flex-between">
               <span class="product-card__price">$—.00</span>
-              <button class="btn btn--ghost" onclick="showToast('Added to cart — \\'I\\'m Hers\\' Tee')">Add</button>
+              <button class="btn btn--ghost"
+                onclick="showToast('Added — \\'I\\'m Hers\\' Tee')">Add</button>
             </div>
           </div>
         </div>
-
         <div class="product-card">
           <div class="product-card__media">Custom saying</div>
           <div class="product-card__body">
             <h3>Custom Saying Tee</h3>
-            <p>Your own line, sophisticated layout, multiple colours</p>
+            <p>Your own line · sophisticated layout · multiple colours</p>
             <div class="flex-between">
               <span class="product-card__price">$—.00</span>
-              <button class="btn btn--ghost" onclick="showToast('Added to cart — Custom Saying Tee')">Add</button>
+              <button class="btn btn--ghost"
+                onclick="showToast('Added — Custom Saying Tee')">Add</button>
             </div>
           </div>
         </div>
       </div>
-
       <hr class="hr">
       <p class="small muted">
-        In the live build, this section can link out to a Shopify store rather
-        than running its own checkout.
+        Photo submitted by couple → background removed → proof sent for approval
+        → signed off → produced. Logo placement handled by Dom Design Studio.
       </p>
     </div>
 
   </main>
 </div>
 
-<script src="js/app.js"></script>
+<script src="../js/app.js"></script>
+<script>
+const NAV_ITEMS = [
+  { num: "01", label: "Dashboard",       href: "dashboard.html" },
+  { num: "02", label: "Add to calendar", href: "add-event.html" },
+  { num: "03", label: "Wedding contacts",href: "emergency.html" },
+  { num: "04", label: "Shop",            href: "shop.html" },
+];
+function renderSidebar(activeHref) {
+  const mount = document.getElementById("sidebar-mount");
+  if (!mount) return;
+  const links = NAV_ITEMS.map(item => {
+    const active = item.href === activeHref ? " active" : "";
+    return `<a href="${item.href}" class="${active.trim()}">
+              <span class="num">${item.num}</span><span>${item.label}</span>
+            </a>`;
+  }).join("");
+  mount.innerHTML = `
+    <div class="sidebar__brand">
+      <span class="eyebrow">D'Ette Services</span>
+      <div class="wordmark">Wedding Portal</div>
+    </div>
+    <nav class="sidebar__nav">${links}
+      <a href="../index.html" style="margin-top:auto;opacity:0.5;">
+        <span class="num">↩</span><span>Sign out</span>
+      </a>
+    </nav>
+    <div class="sidebar__foot">Demo build · Prototype</div>`;
+}
+document.addEventListener("DOMContentLoaded", () => renderSidebar("shop.html"));
+</script>
+
 </body>
 </html>

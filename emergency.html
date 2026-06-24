@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Address Book — D'Ette Services</title>
-<link rel="stylesheet" href="css/style.css">
+<title>Wedding Contacts — D'Ette Services</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .sidebar { background: #2A1A18; }
+  .sidebar__brand .wordmark { font-size: 22px; }
+  .sidebar__brand .eyebrow { color: #C49A8A; }
+  .sidebar__nav a .num { color: #C49A8A; }
+  .sidebar__nav a.active { background: rgba(168,105,79,0.25); }
+</style>
 </head>
-<body data-page="emergency.html">
+<body data-page="wedding/emergency.html">
 
 <div class="app">
   <aside class="sidebar" id="sidebar-mount"></aside>
@@ -15,8 +22,8 @@
 
     <div class="topbar">
       <div class="topbar__title">
-        <span class="eyebrow">Step 03</span>
-        <h1>Address Book</h1>
+        <span class="eyebrow">Wedding Portal · Step 03</span>
+        <h1>Wedding Contacts</h1>
       </div>
       <div class="topbar__meta">
         <span class="sync-badge">Synced to Google Calendar</span><br>
@@ -27,13 +34,12 @@
     <div class="panel">
       <div class="panel__head">
         <h2>Emergency contacts</h2>
-        <span class="tag">Pre-printed on calendars</span>
+        <span class="tag">Pre-printed on wedding calendar</span>
       </div>
       <p class="muted small">
-        These numbers appear on the printed calendar's emergency page, and are
-        always visible here in the portal.
+        These numbers appear on the printed 2027 Wedding Calendar's emergency page
+        and are always accessible here in the portal.
       </p>
-
       <div class="grid-3">
         <div class="contact-card">
           <span class="role">Emergency</span>
@@ -55,62 +61,77 @@
 
     <div class="panel">
       <div class="panel__head">
-        <h2>Personal contacts</h2>
-        <span class="tag">Editable by you</span>
+        <h2>Wedding vendor directory</h2>
+        <span class="tag">Your team</span>
       </div>
       <p class="muted small">
-        Add the people you'd want someone to call on your behalf — doctor,
-        family, your planner.
+        Every vendor on your wedding team, in one place. Wedding activities only —
+        real estate and special event contacts are on their own separate portals.
       </p>
-
       <div class="grid-3">
         <div class="contact-card">
-          <span class="role">Family doctor</span>
-          <h3>Dr. L. Bouchard</h3>
-          <p>Clinique Saint-Rémi</p>
-          <p>(450) 555-0114</p>
+          <span class="role">Wedding planner</span>
+          <h3>D'Ette Services</h3>
+          <p>ms.dette@dettesvcs.com</p>
+          <p>(346) 291-7543</p>
         </div>
         <div class="contact-card">
-          <span class="role">Emergency contact</span>
-          <h3>Marc Tremblay</h3>
-          <p>Spouse</p>
-          <p>(450) 555-0188</p>
+          <span class="role">Photographer</span>
+          <h3>Studio Lumière</h3>
+          <p>contact@studiolumiere.example</p>
+          <p>(555) 210-0044</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Florist</span>
+          <h3>Bloom & Co.</h3>
+          <p>hello@bloomco.example</p>
+          <p>(555) 310-0077</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Caterer</span>
+          <h3>Patisserie Lemoine</h3>
+          <p>info@lemoine.example</p>
+          <p>(555) 410-0099</p>
+        </div>
+        <div class="contact-card">
+          <span class="role">Venue</span>
+          <h3>Rivière Hall</h3>
+          <p>events@rivierehall.example</p>
+          <p>(555) 510-0022</p>
         </div>
         <div class="contact-card editable">
-          <span class="role">Add new</span>
+          <span class="role">Add vendor</span>
           <h3>+ New contact</h3>
-          <p>Name, role, phone</p>
+          <p>Name, role, phone, email</p>
         </div>
       </div>
     </div>
 
     <div class="panel">
       <div class="panel__head">
-        <h2>Vendor &amp; partner directory</h2>
-        <span class="tag">Real estate · special events</span>
+        <h2>Couple's personal contacts</h2>
+        <span class="tag">ICE — in case of emergency</span>
       </div>
       <p class="muted small">
-        Realtors and vendors on this directory can request a calendar with their
-        own logo and details swapped in.
+        Added by the couple — people to contact on their behalf if needed.
       </p>
-
       <div class="grid-3">
         <div class="contact-card">
-          <span class="role">Realtor — commercial</span>
-          <h3>J. Picard</h3>
-          <p>Picard Commercial Group</p>
-          <p>jpicard@example.com</p>
+          <span class="role">Bride's family contact</span>
+          <h3>Marie Tremblay</h3>
+          <p>Mother of bride</p>
+          <p>(450) 555-0188</p>
         </div>
         <div class="contact-card">
-          <span class="role">Vendor — catering</span>
-          <h3>Table &amp; Thyme</h3>
-          <p>Special events</p>
-          <p>hello@tableandthyme.example</p>
+          <span class="role">Groom's family contact</span>
+          <h3>James Tremblay</h3>
+          <p>Father of groom</p>
+          <p>(450) 555-0166</p>
         </div>
         <div class="contact-card editable">
-          <span class="role">Request</span>
-          <h3>+ Request white-label calendar</h3>
-          <p>Same design, your branding</p>
+          <span class="role">Add contact</span>
+          <h3>+ New ICE contact</h3>
+          <p>Name, relation, phone</p>
         </div>
       </div>
     </div>
@@ -118,6 +139,37 @@
   </main>
 </div>
 
-<script src="js/app.js"></script>
+<script src="../js/app.js"></script>
+<script>
+const NAV_ITEMS = [
+  { num: "01", label: "Dashboard",       href: "dashboard.html" },
+  { num: "02", label: "Add to calendar", href: "add-event.html" },
+  { num: "03", label: "Wedding contacts",href: "emergency.html" },
+  { num: "04", label: "Shop",            href: "shop.html" },
+];
+function renderSidebar(activeHref) {
+  const mount = document.getElementById("sidebar-mount");
+  if (!mount) return;
+  const links = NAV_ITEMS.map(item => {
+    const active = item.href === activeHref ? " active" : "";
+    return `<a href="${item.href}" class="${active.trim()}">
+              <span class="num">${item.num}</span><span>${item.label}</span>
+            </a>`;
+  }).join("");
+  mount.innerHTML = `
+    <div class="sidebar__brand">
+      <span class="eyebrow">D'Ette Services</span>
+      <div class="wordmark">Wedding Portal</div>
+    </div>
+    <nav class="sidebar__nav">${links}
+      <a href="../index.html" style="margin-top:auto;opacity:0.5;">
+        <span class="num">↩</span><span>Sign out</span>
+      </a>
+    </nav>
+    <div class="sidebar__foot">Demo build · Prototype</div>`;
+}
+document.addEventListener("DOMContentLoaded", () => renderSidebar("emergency.html"));
+</script>
+
 </body>
 </html>
