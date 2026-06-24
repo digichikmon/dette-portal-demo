@@ -740,6 +740,47 @@ input:focus, select:focus, textarea:focus {
   .auth-aside { display: none; }
 }
 
+/* ---- Wedding portal theme ---- */
+
+.wedding-theme .sidebar { background: #2A1A18; }
+.wedding-theme .sidebar__brand .wordmark { font-size: 22px; }
+.wedding-theme .sidebar__brand .eyebrow { color: #C49A8A; }
+.wedding-theme .sidebar__nav a .num { color: #C49A8A; }
+.wedding-theme .sidebar__nav a.active { background: rgba(168,105,79,0.25); }
+
+.wedding-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #A8694F;
+  background: var(--rose);
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.wedding-badge::before {
+  content: "♥";
+  font-size: 10px;
+}
+
+.tz-preview {
+  background: var(--rose);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--mute);
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+.tz-preview strong { color: var(--ink); }
+
 /* ---- Utility ---- */
 
 .muted { color: var(--mute); }

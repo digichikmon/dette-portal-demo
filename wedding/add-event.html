@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add to Calendar — Wedding Portal</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="wedding/add-event.html" class="wedding-theme">
+
+<div class="app">
+  <aside class="sidebar" id="sidebar-mount"></aside>
+
+  <main class="main">
+
+    <div class="topbar">
+      <div class="topbar__title">
+        <span class="eyebrow">Wedding Portal · Step 02</span>
+        <h1>Add to Calendar</h1>
+      </div>
+      <div class="topbar__meta">
+        <span class="sync-badge">Synced to Google Calendar</span><br>
+        <strong>ms.dette@dettesvcs.com</strong>
+      </div>
+    </div>
+
+    <div class="grid-2">
+
+      <div class="panel">
+        <div class="panel__head">
+          <h2>New wedding entry</h2>
+          <span class="tag">Wedding activities only</span>
+        </div>
+
+        <form onsubmit="return false;">
+
+          <label for="ev-category">Activity type</label>
+          <select id="ev-category">
+            <option>Venue walkthrough</option>
+            <option>Cake tasting</option>
+            <option>Dress / attire fitting</option>
+            <option>Floral consultation</option>
+            <option>Photography session</option>
+            <option>Catering meeting</option>
+            <option>Music / entertainment</option>
+            <option>Rehearsal</option>
+            <option>Rehearsal dinner</option>
+            <option>Ceremony</option>
+            <option>Reception</option>
+            <option>Honeymoon travel</option>
+            <option>Other wedding activity</option>
+          </select>
+
+          <label for="ev-title">Title / notes</label>
+          <input type="text" id="ev-title" placeholder="e.g. Venue walkthrough — Rivière Hall"
+                 value="Venue walkthrough — Rivière Hall">
+
+          <div class="field-row">
+            <div>
+              <label for="ev-date">Date</label>
+              <input type="date" id="ev-date" value="2026-07-08">
+            </div>
+            <div>
+              <label for="ev-time">Time</label>
+              <input type="time" id="ev-time" value="14:00">
+            </div>
+          </div>
+
+          <label for="ev-tz">Couple's timezone</label>
+          <select id="ev-tz" onchange="updateTzPreview()">
+            <option value="America/New_York">Eastern Time — New York, Miami</option>
+            <option value="America/Chicago">Central Time — Houston, Chicago</option>
+            <option value="America/Denver">Mountain Time — Denver, Phoenix</option>
+            <option value="America/Los_Angeles">Pacific Time — Los Angeles, Seattle</option>
+            <option value="Europe/London">London (GMT/BST)</option>
+            <option value="Europe/Paris">Paris / Rome / Madrid (CET)</option>
+            <option value="Asia/Dubai">Dubai (GST)</option>
+            <option value="Asia/Riyadh">Riyadh (AST)</option>
+            <option value="Asia/Kolkata">Mumbai / Delhi (IST)</option>
+            <option value="Asia/Tokyo">Tokyo (JST)</option>
+            <option value="Australia/Sydney">Sydney (AEST)</option>
+          </select>
+
+          <div class="tz-preview" id="tz-preview">
+            <strong>Synced to couple's local time:</strong><br>
+            Event will show as <strong>2:00 PM</strong> for the couple in
+            <strong>New York (Eastern Time)</strong> —
+            automatically converted from your Houston time.
+          </div>
+
+          <label for="ev-couple">Couple name</label>
+          <input type="text" id="ev-couple" placeholder="e.g. A. & M. Tremblay"
+                 value="A. & M. Tremblay">
+
+          <label for="ev-notes">Notes</label>
+          <textarea id="ev-notes" rows="2"
+                    placeholder="Anything the team should know">Bring fabric swatch for groom's tie colour match.</textarea>
+
+          <button type="button" class="btn btn--accent" style="width:100%;"
+                  onclick="submitEvent()">
+            Add to calendar
+          </button>
+
+        </form>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head">
+          <h2>What happens next</h2>
+          <span class="tag">Behind the scenes</span>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date"
+               style="font-size:15px;font-family:var(--font-mono);color:var(--ink);">1</div>
+          <div class="event-row__body">
+            <h3>Activity tagged — wedding only</h3>
+            <p>Only wedding activities are accepted here. Real estate and special events
+               are handled on their own separate portals.</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date"
+               style="font-size:15px;font-family:var(--font-mono);color:var(--ink);">2</div>
+          <div class="event-row__body">
+            <h3>Time synced to couple's local timezone</h3>
+            <p>A bride in New York sees New York time. A couple in Dubai sees Dubai time.
+               No manual conversion needed on either end.</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date"
+               style="font-size:15px;font-family:var(--font-mono);color:var(--ink);">3</div>
+          <div class="event-row__body">
+            <h3>Synced to your Google Calendar</h3>
+            <p>The entry appears on Ms. D'Ette's own Google Calendar automatically,
+               already tagged and sorted — no re-entry needed.</p>
+          </div>
+        </div>
+
+        <div class="event-row">
+          <div class="event-row__date"
+               style="font-size:15px;font-family:var(--font-mono);color:var(--ink);">4</div>
+          <div class="event-row__body">
+            <h3>Confirmation sent to couple</h3>
+            <p>The couple receives a summary with the date, time in their local timezone,
+               and the activity details.</p>
+          </div>
+        </div>
+
+        <hr class="hr">
+        <p class="small muted">
+          In this prototype, "Add to calendar" triggers a confirmation toast only.
+          Timezone conversion and Google Calendar sync would be wired in the real build.
+        </p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="../js/app.js"></script>
+<script>
+const WEDDING_NAV_ITEMS = [
+  { num: "01", label: "Dashboard",       href: "dashboard.html" },
+  { num: "02", label: "Add to calendar", href: "add-event.html" },
+  { num: "03", label: "Wedding contacts",href: "emergency.html" },
+  { num: "04", label: "Shop",            href: "shop.html" },
+];
+function renderWeddingSidebar(activeHref) {
+  const mount = document.getElementById("sidebar-mount");
+  if (!mount) return;
+  const links = WEDDING_NAV_ITEMS.map(item => {
+    const active = item.href === activeHref ? " active" : "";
+    return `<a href="${item.href}" class="${active.trim()}">
+              <span class="num">${item.num}</span><span>${item.label}</span>
+            </a>`;
+  }).join("");
+  mount.innerHTML = `
+    <div class="sidebar__brand">
+      <span class="eyebrow">D'Ette Services</span>
+      <div class="wordmark">Wedding Portal</div>
+    </div>
+    <nav class="sidebar__nav">${links}
+      <a href="../index.html" style="margin-top:auto;opacity:0.5;">
+        <span class="num">↩</span><span>Sign out</span>
+      </a>
+    </nav>
+    <div class="sidebar__foot">Demo build · Prototype</div>`;
+}
+document.addEventListener("DOMContentLoaded", () => renderWeddingSidebar("add-event.html"));
+
+const TZ_LABELS = {
+  "America/New_York":    "New York (Eastern Time)",
+  "America/Chicago":     "Houston / Chicago (Central Time)",
+  "America/Denver":      "Denver (Mountain Time)",
+  "America/Los_Angeles": "Los Angeles (Pacific Time)",
+  "Europe/London":       "London (GMT/BST)",
+  "Europe/Paris":        "Paris / Rome (CET)",
+  "Asia/Dubai":          "Dubai (GST)",
+  "Asia/Riyadh":         "Riyadh (AST)",
+  "Asia/Kolkata":        "Mumbai / Delhi (IST)",
+  "Asia/Tokyo":          "Tokyo (JST)",
+  "Australia/Sydney":    "Sydney (AEST)",
+};
+
+function updateTzPreview() {
+  const tz  = document.getElementById("ev-tz").value;
+  const time = document.getElementById("ev-time").value || "14:00";
+  const [h, m] = time.split(":").map(Number);
+  const ampm = h >= 12 ? "PM" : "AM";
+  const h12  = h % 12 === 0 ? 12 : h % 12;
+  const timeStr = `${h12}:${String(m).padStart(2,"0")} ${ampm}`;
+  document.getElementById("tz-preview").innerHTML =
+    `<strong>Synced to couple's local time:</strong><br>
+     Event will show as <strong>${timeStr}</strong> for the couple in
+     <strong>${TZ_LABELS[tz] || tz}</strong> —
+     automatically converted from your Houston time.`;
+}
+
+function submitEvent() {
+  const cat    = document.getElementById("ev-category").value;
+  const couple = document.getElementById("ev-couple").value || "the couple";
+  const tz     = TZ_LABELS[document.getElementById("ev-tz").value] || "";
+  showToast(`"${cat}" added for ${couple} · synced to ${tz}`);
+}
+</script>
+
+</body>
+</html>
